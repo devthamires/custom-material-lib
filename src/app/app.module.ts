@@ -6,6 +6,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UiProgressBarModule } from './ui/components/ui-progress-bar/ui-progress-bar.module';
 import { UiInputModule } from './ui/components/form/input/input.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { UiTabsModule } from './ui/components/tabs/tabs.module';
+import { UiFormFieldModule } from './ui/components/form/form-field/form-field.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     UiProgressBarModule,
     UiInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    UiTabsModule,
+    UiFormFieldModule
   ],
   bootstrap: [AppComponent]
 })

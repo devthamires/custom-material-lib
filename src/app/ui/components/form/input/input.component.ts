@@ -1,4 +1,4 @@
-import { Component, EventEmitter, forwardRef, Injector, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, forwardRef, Injector, Input, Output } from '@angular/core';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { ControlValueAccessorConnector } from '../utils/control-value-accessor-connector';
 
@@ -16,7 +16,7 @@ type TypeInput = 'text' | 'email' | 'password'
     }
   ]
 })
-export class InputComponent extends ControlValueAccessorConnector implements OnInit {
+export class InputComponent extends ControlValueAccessorConnector {
   @Input() type = 'text';
   @Input() label = '';
   @Input() placeholder = '';
@@ -28,12 +28,4 @@ export class InputComponent extends ControlValueAccessorConnector implements OnI
   constructor(injector: Injector) {
     super(injector);
   }
-
-  ngOnInit(): void {
-  }
-
-  onIconClick() {
-    this.clickedIcon.emit();
-  }
-
 }

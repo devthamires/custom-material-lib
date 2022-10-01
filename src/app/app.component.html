@@ -1,10 +1,36 @@
-<div style="padding: 20px; display:flex; flex-direction:column; gap:20px">
+<div class="app">
 
-  <form [formGroup]="form">
-    <ui-input formControlName="input" label="Input Example"></ui-input>
-  </form>
+  <div>
+    <h3>Single Input</h3>
+    <ui-input [formControl]="inputSearch" label="Search" icon="search"></ui-input>
+  </div>
 
-  <ui-input [formControl]="inputSearch" label="Search" icon="search"></ui-input>
 
-  <ui-progress-bar></ui-progress-bar>
+  <ui-tabs>
+    <ui-tab title="Forms Components">
+      <form [formGroup]="form" class="form">
+        <ui-form-field [control]="form.controls['name']">
+          <ui-input formControlName="name" label="Name" type="text"></ui-input>
+        </ui-form-field>
+        <ui-form-field [control]="form.controls['email']">
+          <ui-input formControlName="email" label="Email" type="email"></ui-input>
+        </ui-form-field>
+        <ui-form-field [control]="form.controls['password']">
+          <ui-input formControlName="password" label="Password" [type]="passwordType" icon="remove_red_eye"
+            (clickedIcon)="showPassword()"></ui-input>
+        </ui-form-field>
+      </form>
+    </ui-tab>
+
+    <ui-tab title="UI Components">
+      <div class="app">
+        <label>Progress Bar</label>
+        <ui-progress-bar></ui-progress-bar>
+      </div>
+    </ui-tab>
+
+    <ui-tab title="Layout">
+      Content 3
+    </ui-tab>
+  </ui-tabs>
 </div>

@@ -11,19 +11,25 @@ export class AppComponent implements OnInit {
 
   form!: FormGroup;
   inputSearch!: FormControl;
-
+  passwordType = 'password';
   constructor(private fb: FormBuilder) {
   }
 
   ngOnInit(): void {
     this.form = this.fb.group({
-      input: ['', Validators.required]
+      name: ['', Validators.required],
+      email: ['', Validators.compose([Validators.required, Validators.email])],
+      password: ['', Validators.compose([Validators.required, Validators.minLength(8)])]
     })
 
     this.inputSearch = new FormControl('');
 
     this.getInputSearchValues()
 
+  }
+
+  showPassword() {
+    this.passwordType = this.passwordType === 'password' ? 'text' : 'password';
   }
 
   private getInputSearchValues() {

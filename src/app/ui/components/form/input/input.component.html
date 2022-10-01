@@ -2,6 +2,6 @@
   <mat-label>{{ label }}</mat-label>
   <input matInput [formControl]="control" [readonly]="readonly" [placeholder]="placeholder" [type]="type" />
   <div matSuffix>
-    <mat-icon>{{icon}}</mat-icon>
+    <mat-icon (click)="clickedIcon.emit()">{{icon}}</mat-icon>
   </div>
 </mat-form-field>
